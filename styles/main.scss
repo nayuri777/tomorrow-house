@@ -1,4 +1,4 @@
-p {
-  color: #fff;
-  display: block;
-}
+@import './constants/_colors.scss';
+@import './base/_fonts';
+@import './base/_normalize';
+@import './base/_reset';
