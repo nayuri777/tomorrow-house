@@ -1,0 +1,107 @@
+.sidebar {
+  $sidebar-width: 240px;
+
+  @include no-scrollbar;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $sidebar-width;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 32px 20px;
+  background-color: $white;
+  z-index: $sidebar-level;
+  transform: translate3d(-#{$sidebar-width}, 0, 0);
+  transition: transform 300ms ease-in-out;
+  overscroll-behavior: contain; //뒤에 내용이 스크롤 안되게.
+
+  &.is-active {
+    transform: translate3d(0, 0, 0);
+  }
+
+  &-header {
+    padding: 0 12px;
+
+    .logo {
+      @include flexbox(start);
+
+      a {
+        display: block;
+      }
+
+      img {
+        display: block;
+        width: auto;
+        height: 20px;
+      }
+    }
+  }
+
+  &-user,
+  &-auth {
+    @include flexbox(start);
+    height: 88px;
+  }
+
+  &-user {
+    //padding: 32px 0;
+
+    a {
+      @include flexbox(start);
+      @include text-style(14, $primary);
+      width: 100%;
+      font-weight: bold;
+    }
+
+    .avatar-24 {
+      flex-grow: 0;
+      flex-shrink: 0;
+      margin-right: 8px;
+    }
+
+    .user-name {
+      @include truncate;
+      flex-grow: 1;
+    }
+  }
+
+  &-auth {
+    @include flexbox(between);
+    padding: 24px 0;
+
+    a {
+      width: 84px;
+    }
+  }
+
+  &-nav {
+    .drawer-menu {
+      border-top: 1px solid $border;
+
+      &.is-expert {
+        border-bottom: 1px solid $border;
+      }
+    }
+  }
+
+  &-user-menu {
+    margin-top: 16px;
+    .user-menu-list {
+    }
+
+    .user-menu-item {
+      a {
+        @include flexbox(start);
+        @include text-style(14, $primary);
+        width: 100%;
+        height: 36px;
+        padding: 0 12px;
+
+        &:active {
+          color: $blue;
+        }
+      }
+    }
+  }
+}

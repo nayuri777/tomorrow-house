@@ -1,0 +1,15 @@
+.global-footer {
+  &-title {
+    @include text-style(13, $dark);
+    font-weight: 700;
+
+    .ic-chevron {
+      display: inline-block;
+      font-size: 12px;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &-contact {
+  }
+}

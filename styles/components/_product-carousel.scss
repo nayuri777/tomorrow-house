@@ -1,0 +1,119 @@
+.product-carousel {
+  position: relative;
+
+  &-slider {
+    margin: 0 -#{$grid-margin};
+  }
+
+  &-thumbnail {
+    @include pos-center-x;
+    bottom: 16px;
+
+    .thumbnail-list {
+      @include flexbox;
+    }
+
+    .thumbnail-item {
+      @include flexbox;
+      margin: 0 4px;
+
+      &.tns-nav-active {
+        button {
+          transform: scale(1.3333);
+          opacity: 1;
+        }
+      }
+
+      button {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: $white;
+        opacity: 0.5;
+        transition: transform 200ms ease-in-out opacity 200ms ease-in-out;
+      }
+
+      img {
+        display: none;
+      }
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @include responsive(T) {
+    padding-right: 30px;
+
+    &-slider {
+      margin: 0 0 8px 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    &-thumbnail {
+      position: static;
+      transform: none;
+    }
+
+    .thumbnail-list {
+      justify-content: start;
+    }
+
+    .thumbnail-item {
+      margin: 0 8px 0 0;
+      &.tns-nav-active {
+        button {
+          transform: none;
+          opacity: 1;
+          border: 2px solid $blue;
+        }
+      }
+
+      button {
+        @include flexbox; // 썸네일 이미지 움직이는 현상 개선
+        width: 56px;
+        height: 56px;
+        border-radius: 4px;
+        overflow: hidden;
+        opacity: 1;
+      }
+
+      img {
+        display: block;
+        width: 56px;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    @include flexbox(end, start);
+    flex-direction: row-reverse;
+    margin-bottom: 0;
+
+    &-slider {
+      width: 500px;
+      height: 500px;
+    }
+
+    &-thumbnail {
+      margin-right: 8px;
+    }
+
+    .thumbnail-list {
+      flex-direction: column;
+    }
+
+    .thumbnail-item {
+      margin: 0 0 8px 0;
+      button,
+      img {
+        width: 75px;
+        height: 75px;
+      }
+    }
+  }
+}
