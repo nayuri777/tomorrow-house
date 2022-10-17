@@ -4,7 +4,6 @@ const reviewLikeButtonList = document.querySelectorAll(
 
 const HELPFUL = '도움됨'
 const NOT_HELPFUL = '도움이 돼요'
-//const checkIcon = ' <i class="ic-check" area-hidden></i>'
 
 function toggleReviewLikeButton() {
   const isLiked = this.classList.contains('btn-primary')

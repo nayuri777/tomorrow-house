@@ -88,9 +88,12 @@ function updateActiveTabOnScroll() {
   }
 
   const bodyHeight =
-    document.body.offsetHeight + (window.innerWidth < 1200 ? 56 : 0)
-  if (window.scrollY + window.innerHeight === bodyHeight) {
+   document.body.offsetHeight + (window.innerWidth < 1200 ? 56 : 0)
+  
+    if (Math.round(window.scrollY + window.innerHeight) === bodyHeight) {
     newActiveTab = productTabButtonList[4]
+
+  
   }
 
   if (newActiveTab) {
