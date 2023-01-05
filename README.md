@@ -1,6 +1,6 @@
 # 내일의 집
 
-[내일의 집 제품 상세페이지 (https://nayul3090.cafe24.com/tomorrowHouse/Public/index.html)
+[오늘의 집 클론 내일의 집 제품 상세페이지 (https://nayul3090.cafe24.com/tomorrowHouse/Public/index.html)
 
 ### 1. GNB
 
